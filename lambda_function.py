@@ -22,8 +22,7 @@ def get_sheets_service():
 def parse_text(text):
 	if text[:text.find(' ')] != 'QUOTE':
 		return None
-	text = text.lstrip('QUOTE ')
-	return text.split("~")
+	return text[len('QUOTE '):].split("~")
 
 def post_to_groupme(quote, author):
 	data = {
